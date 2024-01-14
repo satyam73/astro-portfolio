@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import Navbar from "../components/header.astro";
 import "../styles/global.css";
 
@@ -19,6 +21,7 @@ const pageTitle = title ? `${title} - ${USER}` : USER;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
 
   <body class="bg-[rgb(18,18,18)]">

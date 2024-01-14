@@ -2,6 +2,7 @@
 import dayjs from "dayjs";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
 
 import "../styles/global.css";
 
@@ -19,6 +20,7 @@ const { post } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{post.data.title}</title>
+    <ViewTransitions />
   </head>
 
   <body class="bg-[rgb(18,18,18)]">

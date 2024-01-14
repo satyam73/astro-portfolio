@@ -5,9 +5,9 @@ import Work from "../components/work.astro";
 import "../styles/global.css";
 
 import type { TWork } from "../types/work.type";
+import { Image } from "astro:assets";
 
 const posts = await getCollection("posts");
-const headline = "Headline point of the description.";
 
 const workDetails: TWork[] = [
   {
@@ -65,35 +65,42 @@ const workDetails: TWork[] = [
 ---
 
 <BaseLayout>
-  <section class="pb-24">
-    <p class="text-neutral-500 text-xl sm:text-2xl pt-10 sm:pt-12">
-      <span class="text-neutral-100 font-medium">{headline}</span>
-      <span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptas
-        distinctio odio consectetur exercitationem eius omnis natus ducimus
-        eveniet unde!
-      </span>
-    </p>
+  <div class="space-y-16 pb-24">
+    <div class="pt-16 sm:pt-20">
+      <h2 class="text-neutral-500 font-semibold pb-2">Work Experience</h2>
+      <Work details={workDetails} />
+    </div>
 
-    <!-- <div class="py-12">
-      <h3 class="text-xl font-semibold pb-2">My thoughts</h3>
-      <div class="max-w-96">
+    <div>
+      <h2 class="text-neutral-500 font-semibold pb-2">My thoughts</h2>
+      <div class="space-y-2">
         {
           posts.map((post) => (
-            <div class="border-b border-gray-200 last:border-none hover:bg-gray-100 transition">
-              <a href={`/blog/${post.slug}`} class="py-3 block px-2">
-                <h4 class="font-medium text-gray-800">{post.data.title}</h4>
-                <p class="text-sm text-gray-600">{post.data.description}</p>
-              </a>
-            </div>
+            <a
+              href={`/blog/${post.slug}`}
+              class="flex gap-3 p-4 -mx-4 sm:gap-4 transition hover:bg-neutral-900 rounded-xl outline-none ring-2 ring-transparent focus:ring-neutral-500 focus:bg-neutral-900 shadow-sm"
+            >
+              <div class="w-20 h-20 shrink-0 rounded-md overflow-hidden">
+                <Image
+                  src={post.data.image.url}
+                  alt={post.data.image.alt}
+                  width={128}
+                  height={128}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <h4 class="font-semibold text-neutral-100 text-lg sm:text-xl">
+                  {post.data.title}
+                </h4>
+
+                <p class="text-neutral-500">{post.data.description}</p>
+              </div>
+            </a>
           ))
         }
       </div>
-    </div> -->
-
-    <div class="pt-16 sm:pt-20">
-      <h2 class="text-neutral-500 font-semibold pb-2">My Work</h2>
-      <Work details={workDetails} />
     </div>
-  </section>
+  </div>
 </BaseLayout>

@@ -1,16 +1,10 @@
 ---
+import BaseLayout from "../layouts/base.layout.astro";
 import "../styles/global.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1 class="text-5xl m-6 font-semibold">hello world</h1>
-  </body>
-</html>
+<BaseLayout>
+  <main class="max-w-screen-xl mx-auto m-6">
+    <h1 class="text-5xl font-semibold">hello world</h1>
+  </main>
+</BaseLayout>

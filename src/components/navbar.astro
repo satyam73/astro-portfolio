@@ -1,0 +1,24 @@
+---
+import { ROUTES } from "../routes";
+
+const currentRoute = Astro.url.pathname;
+---
+
+<nav class="px-4 bg-gray-100 text-gray-700">
+  <ul class="py-4 max-w-screen-xl mx-auto flex items-center">
+    <li>
+      <h2 class="font-medium text-lg uppercase">
+        <a href={ROUTES.home}>yash raj</a>
+      </h2>
+    </li>
+
+    <li class="ml-auto">
+      <a
+        href={ROUTES.blog}
+        class={`hover:text-blue-500 transition hover:underline underline-offset-1 ${
+          currentRoute === ROUTES.blog ? "text-blue-500" : ""
+        }`}>blog</a
+      >
+    </li>
+  </ul>
+</nav>

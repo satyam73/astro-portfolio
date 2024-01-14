@@ -1,16 +1,81 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
+import Work from "../components/work.astro";
 import "../styles/global.css";
 
+import type { TWork } from "../types/work.type";
+
 const posts = await getCollection("posts");
+const headline = "Headline point of the description.";
+
+const workDetails: TWork[] = [
+  {
+    company: "Boeing",
+    role: "Senior Software Developer 2",
+    description:
+      "Responsible for developing stable and scalable micro service. The system has a set of unique challenges from a domain and technology perspective.",
+    isOnGoing: true,
+    duration: {
+      from: "2022-06-01",
+      to: "",
+    },
+  },
+  {
+    company: "EY",
+    role: "Senior Security Consultant II",
+    description:
+      "Created various kinds od scheduled jobs that performed activities such as but not limited to Data Aggregation, Data Correlation, Rules and Criteria processing, SQL Query Export and Data clean up.",
+    duration: {
+      from: "2022-02-01",
+      to: "2022-06-01",
+    },
+  },
+  {
+    company: "KPMG",
+    role: "Software Development Consultant",
+    description:
+      "Developed brand new Analytic Web based application along with Web application performance tuning and Stored Procedure performance improvement. Created Stored Procedure for remove direct dependency and background processing.",
+    duration: {
+      from: "2020-01-01",
+      to: "2021-03-01",
+    },
+  },
+  {
+    company: "Siemens",
+    role: "Senior Software Engineer Motion Control - R&D",
+    description:
+      "Enabled ET 200 Pro FC-2 integration with TIA Portal | Application & Framework Developer and IoT Expert. Integrated custom developed library in existing framework. Improved performance of the tool while loading into windows system.",
+    duration: {
+      from: "2018-08-01",
+      to: "2020-01-01",
+    },
+  },
+  {
+    company: "HCL Technologies",
+    role: "Software Engineer",
+    description:
+      "Developed brand new Payment gateway solution as per PCI guideline. Implemented TLS 1.2 for settlement sever and application security. Web application performance tuning and Stored Procedure performance improvement.",
+    duration: {
+      from: "2015-08-01",
+      to: "2018-08-01",
+    },
+  },
+];
 ---
 
 <BaseLayout>
-  <main class="max-w-screen-lg mx-auto m-6">
-    <h1 class="text-5xl font-semibold">hello world</h1>
+  <section class="pb-24">
+    <p class="text-neutral-500 text-xl sm:text-2xl pt-10 sm:pt-12">
+      <span class="text-neutral-100 font-medium">{headline}</span>
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptas
+        distinctio odio consectetur exercitationem eius omnis natus ducimus
+        eveniet unde!
+      </span>
+    </p>
 
-    <div class="py-6">
+    <!-- <div class="py-12">
       <h3 class="text-xl font-semibold pb-2">My thoughts</h3>
       <div class="max-w-96">
         {
@@ -24,6 +89,11 @@ const posts = await getCollection("posts");
           ))
         }
       </div>
+    </div> -->
+
+    <div class="pt-16 sm:pt-20">
+      <h2 class="text-neutral-500 font-semibold pb-2">My Work</h2>
+      <Work details={workDetails} />
     </div>
-  </main>
+  </section>
 </BaseLayout>

@@ -1,0 +1,15 @@
+---
+import WorkDetailsCard from "./work-details-card.astro";
+
+import type { TWork } from "../types/work.type";
+
+type Props = {
+  details: TWork[];
+};
+
+const { details } = Astro.props;
+---
+
+<div class="space-y-2">
+  {details.map((detail) => <WorkDetailsCard {...detail} />)}
+</div>

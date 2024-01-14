@@ -1,8 +1,9 @@
 ---
+import dayjs from "dayjs";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
-import BaseLayout from "./base-layout.astro";
+import "../styles/global.css";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -11,31 +12,50 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<BaseLayout title={post.data.title}>
-  <main class="p-6 text-neutral-50">
-    <div class="pb-8">
-      <h1 class="font-bold text-5xl pb-4">{post.data.title}</h1>
-      <p>Written by - {post.data.author}</p>
-      <p>
-        Published on - {new Date(post.data.pubDate.slice(0, 10)).toDateString()}
-      </p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{post.data.title}</title>
+  </head>
 
-      <p><em>{post.data.description}</em></p>
+  <body class="bg-[rgb(18,18,18)]">
+    <div class="px-4 max-w-screen-lg mx-auto">
+      <header class="py-6">
+        <nav>
+          <ul>
+            <li>
+              <a href="/" class="text-neutral-100 text-lg">Amit Prakash</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      <div
-        class="bg-gray-100 w-full rounded-lg h-96 aspect-video overflow-hidden my-4"
-      >
-        <Image
-          src={post.data.image.url}
-          alt={post.data.image.alt}
-          width={1024}
-          height={384}
-        />
-      </div>
+      <main class="text-neutral-50 py-10">
+        <div class="pb-8">
+          <h1 class="font-bold text-4xl md:text-5xl pb-4">{post.data.title}</h1>
+          <p>
+            {dayjs(post.data.pubDate).format("DD MMMM YYYY")}
+          </p>
+
+          <div
+            class="bg-gray-100 w-full rounded-lg h-96 aspect-video overflow-hidden my-4"
+          >
+            <Image
+              src={post.data.image.url}
+              alt={post.data.image.alt}
+              width={1024}
+              height={384}
+            />
+          </div>
+        </div>
+
+        <div>
+          <slot />
+        </div>
+      </main>
     </div>
-
-    <div>
-      <slot />
-    </div>
-  </main>
-</BaseLayout>
+  </body>
+</html>

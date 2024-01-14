@@ -7,6 +7,7 @@ export default {
 				sans: [
 					'InterVariable, Inter, sans-serif', {
 						fontFeatureSettings: '"liga" 1, "calt" 1',
+						fontOpticalSizing: 'auto',
 					}
 				]
 			}

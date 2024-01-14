@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: [
-					'InterVariable, Inter, sans-serif', {
+					'Inter, sans-serif', {
 						fontFeatureSettings: '"liga" 1, "calt" 1',
 						fontOpticalSizing: 'auto',
 					}

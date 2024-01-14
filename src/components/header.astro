@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+
+import IconLink from "./homepage-header-icon.astro";
+
+import LinkedInIcon from "../icons/linked-icon.astro";
+import XIcon from "../icons/x-icon.astro";
+import GithubIcon from "../icons/github-icon.astro";
+
+const USER_NAME = "Amit Prakash";
+---
+
+<div class="pt-8 sm:pt-16 pb-4">
+  <div class="flex w-full">
+    <div>
+      <div class="pb-4">
+        <h1 class="text-neutral-50 text-2xl sm:text-3xl pb-1 font-semibold">
+          {USER_NAME}
+        </h1>
+        <p class="text-neutral-400 text-base sm:text-lg font-light">
+          Software Engineer
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <IconLink
+          alt="Amit Prakash's LinkedIn profile link"
+          href="https://www.linkedin.com/in/dev-amit-prakash/"
+        >
+          <LinkedInIcon />
+        </IconLink>
+
+        <IconLink
+          alt="Amit Prakash's GitHub profile link"
+          href="https://github.com/iamitprakash"
+        >
+          <GithubIcon />
+        </IconLink>
+
+        <IconLink
+          alt="Amit Prakash's Twitter profile link"
+          href="https://twitter.com/twts_tejas"
+        >
+          <XIcon />
+        </IconLink>
+      </div>
+    </div>
+
+    <div class="w-28 h-28 rounded-lg overflow-hidden ml-auto">
+      <Image
+        src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?q=80&w=3175&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt={""}
+        width={300}
+        height={300}
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>

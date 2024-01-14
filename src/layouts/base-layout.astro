@@ -1,5 +1,5 @@
 ---
-import Navbar from "../components/navbar.astro";
+import Navbar from "../components/header.astro";
 import "../styles/global.css";
 
 type Props = {
@@ -21,8 +21,10 @@ const pageTitle = title ? `${title} - ${USER}` : USER;
     <title>{pageTitle}</title>
   </head>
 
-  <body>
-    <Navbar />
-    <slot />
+  <body class="bg-[rgb(18,18,18)]">
+    <main class="max-w-[700px] px-4 mx-auto">
+      <Navbar />
+      <slot />
+    </main>
   </body>
 </html>

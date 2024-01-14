@@ -8,17 +8,19 @@ const PAGE_TITLE = "blog";
 
 <BaseLayout title={PAGE_TITLE}>
   <main class="max-w-screen-lg mx-auto p-6">
-    <div class="pb-6">
+    <div class="pb-6 text-neutral-50">
       <h1>amit's blog</h1>
       <p>welcome to my area of the internet.</p>
     </div>
 
-    <div class="">
+    <div>
       <ul>
         {
           allPosts.map((post) => (
             <li>
-              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+              <a href={`/blog/${post.slug}`} class="text-neutral-50">
+                {post.data.title}
+              </a>
             </li>
           ))
         }

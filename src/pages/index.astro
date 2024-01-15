@@ -21,46 +21,7 @@ const workDetails: TWork[] = [
       to: "",
     },
   },
-  {
-    company: "EY",
-    role: "Senior Security Consultant II",
-    description:
-      "Created various kinds od scheduled jobs that performed activities such as but not limited to Data Aggregation, Data Correlation, Rules and Criteria processing, SQL Query Export and Data clean up.",
-    duration: {
-      from: "2022-02-01",
-      to: "2022-06-01",
-    },
-  },
-  {
-    company: "KPMG",
-    role: "Software Development Consultant",
-    description:
-      "Developed brand new Analytic Web based application along with Web application performance tuning and Stored Procedure performance improvement. Created Stored Procedure for remove direct dependency and background processing.",
-    duration: {
-      from: "2020-01-01",
-      to: "2021-03-01",
-    },
-  },
-  {
-    company: "Siemens",
-    role: "Senior Software Engineer Motion Control - R&D",
-    description:
-      "Enabled ET 200 Pro FC-2 integration with TIA Portal | Application & Framework Developer and IoT Expert. Integrated custom developed library in existing framework. Improved performance of the tool while loading into windows system.",
-    duration: {
-      from: "2018-08-01",
-      to: "2020-01-01",
-    },
-  },
-  {
-    company: "HCL Technologies",
-    role: "Software Engineer",
-    description:
-      "Developed brand new Payment gateway solution as per PCI guideline. Implemented TLS 1.2 for settlement sever and application security. Web application performance tuning and Stored Procedure performance improvement.",
-    duration: {
-      from: "2015-08-01",
-      to: "2018-08-01",
-    },
-  },
+  
 ];
 ---
 
@@ -69,8 +30,27 @@ const workDetails: TWork[] = [
     <div class="pt-16 sm:pt-20">
       <h2 class="text-neutral-500 font-semibold pb-2">Work Experience</h2>
       <Work details={workDetails} />
-    </div>
-
+    <br/>
+    <h4 style="color:white">I document my weekly journey through the trenches of enterprise application development, system design, and performance optimization. I share my ups and downs (mostly wins!) in various formats, including blog posts here and LinkedIn newsletters. Dive into some of my favorite exploits below!</h4>
+</div>
+<style>
+      .libutton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 7px;
+        text-align: center;
+        outline: none;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        width: 260px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #0A66C2;
+        font-family: "SF Pro Text", Helvetica, sans-serif;
+      }
+    </style>
+<a class="libutton" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7022684487754944512" target="_blank">Subscribe TechDiary on LinkedIn</a>
     <div>
       <h2 class="text-neutral-500 font-semibold pb-2">My thoughts</h2>
       <div class="space-y-2">

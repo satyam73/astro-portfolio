@@ -25,8 +25,7 @@ Enter the chatroom mediator! Users talk to the mediator, who figures out who nee
 
 ### UML DESIGN
 
-image:
-  url: "https://media.licdn.com/dms/image/D5612AQER4IkE4SiqrQ/article-inline_image-shrink_1500_2232/0/1704828884951?e=1710979200&v=beta&t=m2O4704IazUC8oM0iycYYWtck-A7PNM7-GBihzkPo78"
+![image](https://github.com/iamitprakash/astro-portfolio/assets/34869115/ce913b09-3ea4-4334-83db-b99f549867ef)
 
 
   ```

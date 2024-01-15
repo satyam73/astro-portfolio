@@ -1,7 +1,7 @@
 ---
 title: "TPC-C Benchmark"
 pubDate: "2022-07-01"
-description: "This is the first post of my new Astro blog."
+description: "This is about database Benchmarking ."
 author: "Amit Prakash"
 image:
   url: "https://media.licdn.com/dms/image/D5612AQFOy6S9Gxg2gg/article-cover_image-shrink_720_1280/0/1704566106568?e=1710979200&v=beta&t=-SXuVId_bsdR60uMnESIOjyAS-sVSjZkXwKTAnTYnNw"

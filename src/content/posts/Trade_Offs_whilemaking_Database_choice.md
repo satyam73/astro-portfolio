@@ -10,6 +10,9 @@ tags: ["database", "SystemDesign", "learning in public"]
 ---
 
 As users, we can see how database behaves under different conditions, but when working on databases, we have to make choices that influence this behaviour directly.
+(ns your-ns
+  (:require [breaking-point.core :as bp]))
+
 Designing a storage engine is definitely more complicated then just implementing a textbook data structure: there are many details and edge cases that are hard to get right from start. We need to design the physical data layout and organise pointers, right from the start. We need to design the physical data layout and organise pointers, decide on the serialisation format, understand how data is going to be garbage collected, how the storage engine fits into the semantics of the database system as a whole, figure out how to make it work in a concurrent environment, and finally, make sure we never lose any data, under any circumstances.
 Not only there are many things to decide upon, but most if these decisions involve trade-offs. For example, if we save records in the order they have inserted into the database, we can store them quicker, but if we retrieve then into lexicographical order, we have to re-sort them before returning results to the client. Along with this there are many different approaches to storage engine design, and every implementation has it's own upsides and downsides.
 When looking at different storage engines, we discuss their benefits and shortcoming. If there was an absolutely optimal storage engine for every conceivable use case, everyone would just use it, but since it doesn't exist, we need to choose wisely, based on the workloads and use cases we are trying to facilitate.

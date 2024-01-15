@@ -3,11 +3,48 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/base-layout.astro";
 import Work from "../components/work.astro";
 import "../styles/global.css";
-
+import PreviousWork from  '../components/previous-work.astro';
 import type { TWork } from "../types/work.type";
 import { Image } from "astro:assets";
 
 const posts = await getCollection("posts");
+const companies = [
+  {
+    name: 'HCL',
+    logo: '/hcl-logo.avif',
+    designation:'Software Engineer',
+    duration: '2015-2017',
+    id: 1
+  },
+  {
+    name: 'Siemens AG',
+    logo: '/siemens-logo.jpg',
+    designation:'Senior Software Engineer ',
+    duration: '2015-2017',
+    id: 2
+  },
+  {
+    name: 'KPMG',
+    logo: '/kpmg-logo.png',
+    designation:'Software Development Consultant',
+    duration: 'demo',
+    id: 3
+  },
+  {
+    name: 'EY',
+   logo: '/ey-logo.png',
+    designation:'Senior Security Consultant',
+    duration: 'demo',
+    id: 4
+  },
+  {
+    name: 'Boeing',
+    logo: '/boeing-logo.jpg',
+    designation:'Senior Software Engineer',
+    duration: 'https://www.boeing.com/',
+    id: 5
+  },
+]
 
 const workDetails: TWork[] = [
   {
@@ -30,6 +67,7 @@ const workDetails: TWork[] = [
     <div class="pt-16 sm:pt-20">
       <h2 class="text-neutral-500 font-semibold pb-2">Work Experience</h2>
       <Work details={workDetails} />
+      <PreviousWork companies={companies}/>
     <br/>
     <h4 style="color:white">I document my weekly journey through the trenches of enterprise application development, system design, and performance optimization. I share my ups and downs (mostly wins!) in various formats, including blog posts here and LinkedIn newsletters. Dive into some of my favorite exploits below!</h4>
 </div>

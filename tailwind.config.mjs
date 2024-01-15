@@ -12,6 +12,16 @@ export default {
 				]
 			}
 		},
+		animation: {
+            'infinite-scroll': 'infinite-scroll 20s linear infinite',
+         },
+         keyframes: {
+            'infinite-scroll': {
+               from: { transform: 'translateX(0)' },
+               to: { transform: 'translateX(-50%)' },
+               false: { transform: 'translateX(0)' },
+            },
+         },
 	},
 	plugins: [require("@tailwindcss/typography")],
 }

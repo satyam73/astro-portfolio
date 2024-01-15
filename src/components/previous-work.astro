@@ -2,6 +2,7 @@
 import Company from './company.astro'
 const { companies} = Astro.props;
 
+
 type CompanyType = {
     name: string;
     logo: string;
@@ -13,11 +14,13 @@ type CompanyType = {
 <div class="mt-10 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
             <div class="flex items-center justify-center md:justify-start animate-infinite-scroll gap-10 h-80">
                {companies.map((company: CompanyType) => (
+
                   <Company
                      key={company.id}
                      name={company.name}
                      designation={company.designation}
                      duration={company.duration}
+
                      logo={company.logo}
                   />
                ))}

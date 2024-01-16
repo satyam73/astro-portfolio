@@ -6,7 +6,7 @@ author: "Amit Prakash"
 image:
   url: "https://media.licdn.com/dms/image/D4D12AQGcmlYWq3wV0A/article-cover_image-shrink_600_2000/0/1702668857508?e=1710979200&v=beta&t=QSkOewpn2EwepjTF3PN67u1Tof0A7atd2Qgqb9GCcxA"
   alt: "The full Astro logo."
-tags: ["astro", "blogging", "learning in public"]
+tags: ["#PreflightParty", "#hashtag#SecurityFirst", "#hashtag#DataHarmony", "#hashtag#NoMoreWebWalls"]
 ---
 
 Imagine the internet as a sprawling metropolis, bustling with websites, each its own sovereign domain. While information exchange fuels this city's lifeblood, strict border controls govern how data passes between domains. This, in essence, is the reality of Cross-Origin Resource Sharing (CORS). Today, we embark on a journey to understand this intricate system, focusing on its ever-present gatekeeper: the preflight call.

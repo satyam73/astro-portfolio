@@ -17,8 +17,8 @@ export default {
          },
          keyframes: {
             'infinite-scroll': {
-               from: { transform: 'translateX(0)' },
-               to: { transform: 'translateX(-50%)' },
+               from: { transform: 'translateX(-10%)' },
+               to: { transform: 'translateX(-55%)' },
                false: { transform: 'translateX(0)' },
             },
          },
